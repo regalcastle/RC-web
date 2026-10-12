@@ -1,0 +1,127 @@
+@import 'tailwindcss';
+
+/* ------------------------------------------------------------------
+   Design tokens — colours sampled from the reference UI.
+   Change a value here and it updates everywhere.
+------------------------------------------------------------------- */
+@theme {
+  --font-serif: 'Cormorant Garamond', 'Cormorant', Georgia, serif;
+  --font-sans: 'Poppins', system-ui, -apple-system, 'Segoe UI', sans-serif;
+  --font-script: 'Allura', 'Cormorant Garamond', cursive;
+
+  --color-forest: #141d15;
+  --color-forest-soft: #1a241b;
+  --color-cocoa: #211f17;
+  --color-cream: #faf7f5;
+  --color-sand: #f7f2ef;
+  --color-mist: #f9f3f1;
+  --color-blush: #f7e1dd;
+  --color-blush-deep: #f3dad8;
+  --color-rose: #f5dcd5;
+  --color-gold: #c9934d;
+  --color-gold-soft: #dbaf76;
+  --color-gold-text: #d4b078;
+  --color-whatsapp: #155e34;
+  --color-ink: #1c1c1a;
+  --color-ink-soft: #55534f;
+}
+
+html {
+  scroll-behavior: smooth;
+}
+
+body {
+  margin: 0;
+  background: var(--color-cream);
+  color: var(--color-ink);
+  font-family: var(--font-sans);
+  font-weight: 400;
+  -webkit-font-smoothing: antialiased;
+  -moz-osx-font-smoothing: grayscale;
+  overflow-x: hidden;
+}
+
+section[id] {
+  scroll-margin-top: 72px;
+}
+
+img {
+  display: block;
+}
+
+/* Small-caps eyebrow label used across sections */
+.eyebrow {
+  font-family: var(--font-sans);
+  font-size: 10.5px;
+  font-weight: 500;
+  letter-spacing: 0.32em;
+  text-transform: uppercase;
+}
+
+/* Hide scrollbars on horizontally scrolling rows if ever needed */
+.no-scrollbar::-webkit-scrollbar {
+  display: none;
+}
+.no-scrollbar {
+  scrollbar-width: none;
+}
+
+/* Animated floral drawing (Contact section) */
+.floral-draw {
+  stroke-dasharray: 1;
+  stroke-dashoffset: 1;
+  animation: floral-draw 3.2s cubic-bezier(0.22, 1, 0.36, 1) 0.2s forwards;
+}
+.floral-d2 { animation-delay: 1s; }
+.floral-d3 { animation-delay: 1.6s; }
+.floral-sway {
+  transform-box: fill-box;
+  transform-origin: 10% 100%;
+  animation: floral-sway 7s ease-in-out infinite;
+}
+.floral-sway-b { animation-duration: 8.5s; animation-delay: -2s; }
+.floral-bloom {
+  transform-box: fill-box;
+  transform-origin: center;
+  animation: floral-bloom 6s ease-in-out infinite;
+}
+.floral-bloom-b { animation-duration: 7.5s; animation-delay: -1.5s; }
+.floral-bloom-c { animation-duration: 9s; animation-delay: -3s; }
+.floral-petal {
+  fill: currentColor;
+  stroke: none;
+  opacity: 0;
+  animation: floral-petal 9s ease-in infinite;
+}
+.floral-petal-b { animation-delay: 3s; animation-duration: 11s; }
+.floral-petal-c { animation-delay: 6s; animation-duration: 10s; }
+
+@keyframes floral-draw {
+  to { stroke-dashoffset: 0; }
+}
+@keyframes floral-sway {
+  0%, 100% { transform: rotate(-1.6deg); }
+  50% { transform: rotate(1.6deg); }
+}
+@keyframes floral-bloom {
+  0%, 100% { transform: scale(0.94) rotate(-4deg); }
+  50% { transform: scale(1.06) rotate(4deg); }
+}
+@keyframes floral-petal {
+  0% { opacity: 0; transform: translate(0, 0) rotate(0deg); }
+  15% { opacity: 0.7; }
+  100% { opacity: 0; transform: translate(26px, 150px) rotate(160deg); }
+}
+
+@media (prefers-reduced-motion: reduce) {
+  .floral-draw { stroke-dashoffset: 0; }
+  html {
+    scroll-behavior: auto;
+  }
+  *,
+  *::before,
+  *::after {
+    animation-duration: 0.001ms !important;
+    transition-duration: 0.001ms !important;
+  }
+}
