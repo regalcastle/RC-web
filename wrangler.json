@@ -1,6 +1,6 @@
 {
   "$schema": "node_modules/wrangler/config-schema.json",
-  "name": "regal-castle",
+  "name": "rc-web",
   "compatibility_date": "2025-03-01",
   "assets": {
     "directory": "./dist",
