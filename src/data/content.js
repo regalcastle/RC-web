@@ -11,7 +11,7 @@ export const links = {
   // WhatsApp / phone (international format, digits only for wa.me)
   whatsapp: 'https://wa.me/919995430222',
   // "Call Now" button
-  call: 'tel:+919995430222',
+  call: 'tel:+919072808422',
   contacts: [
     { name: 'Ebin', display: '+91 90728 08422', tel: '+919072808422', wa: 'https://wa.me/919072808422' },
     { name: 'Anandu', display: '+91 999 543 0222', tel: '+919995430222', wa: 'https://wa.me/919995430222' },
